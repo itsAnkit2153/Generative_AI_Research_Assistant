@@ -22,22 +22,38 @@ The system works like a **virtual research team** where each AI agent has a spec
 
 ---
 
-# 🧠 System Architecture
-User Input (Research Topic)
-        ↓
-Streamlit Interface
-        ↓
-CrewAI Multi-Agent System
-        ↓
-Research Specialist Agent
-        ↓
-Internet Search (Serper API)
-        ↓
-Data Analyst Agent
-        ↓
-Content Writer Agent
-        ↓
-Final Research Report
+
+## 🧠 System Architecture
+
+1. **User Input (Research Topic)**  
+   The user enters a research topic through the Streamlit interface.
+
+2. **Streamlit Interface**  
+   The Streamlit web application collects the user input and sends it to the CrewAI system.
+
+3. **CrewAI Multi-Agent System**  
+   CrewAI coordinates multiple AI agents and manages the workflow between them.
+
+4. **Research Specialist Agent**  
+   This agent gathers information related to the research topic.
+
+5. **Internet Search (Serper API)**  
+   The research agent uses the Serper API to search the internet and collect relevant data, statistics, and expert opinions.
+
+6. **Data Analyst Agent**  
+   The analyst agent reviews the research findings and extracts patterns, trends, and key insights.
+
+7. **Content Writer Agent**  
+   The writer agent combines the research findings and analysis to create a well-structured research report.
+
+8. **Final Research Report**  
+   The system generates a complete research report including:
+   - Executive Summary  
+   - Introduction  
+   - Main Findings  
+   - Analysis and Insights  
+   - Conclusions  
+   - Sources
 
 
 
