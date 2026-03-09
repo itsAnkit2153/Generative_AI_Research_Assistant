@@ -24,19 +24,19 @@ The system works like a **virtual research team** where each AI agent has a spec
 
 # 🧠 System Architecture
 User Input (Research Topic)
-↓
+        ↓
 Streamlit Interface
-↓
+        ↓
 CrewAI Multi-Agent System
-↓
+        ↓
 Research Specialist Agent
-↓
+        ↓
 Internet Search (Serper API)
-↓
+        ↓
 Data Analyst Agent
-↓
+        ↓
 Content Writer Agent
-↓
+        ↓
 Final Research Report
 
 
@@ -124,6 +124,6 @@ The web interface allows users to:
 - View results in structured tabs  
 
 Tabs include:
-Research Findings
-Analysis Report
-Final Report
+Research Findings, 
+ Analysis Report,
+  Final Report,
