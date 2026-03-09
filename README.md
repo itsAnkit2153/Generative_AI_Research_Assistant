@@ -143,3 +143,14 @@ Tabs include:
 Research Findings, 
  Analysis Report,
   Final Report,
+
+<details>
+<summary>🚀 Live Demo</summary>
+
+You can try the deployed application here:
+
+https://generative-ai-research-assistant.streamlit.app/
+
+</details>
+
+  
