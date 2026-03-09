@@ -33,6 +33,8 @@ writing_task = Task(
         Keep the report around **600–800 words**.
 
         Ensure the report ends with a **complete conclusion** and does not stop mid-sentence.
+        Ensure the report is fully completed and ends with a proper conclusion.
+        Do not stop mid-sentence.
     """),
 
     expected_output="""
