@@ -10,7 +10,7 @@ temperature = float(os.getenv("WRITER_AGENT_TEMPERATURE"))
 llm = LLM(
     model=model,
     temperature=temperature,
-    max_tokens=600   # limit output to prevent Groq rate-limit errors
+    max_tokens=500   # limit output to prevent Groq rate-limit errors
 )
 
 content_writer_agent = Agent(
