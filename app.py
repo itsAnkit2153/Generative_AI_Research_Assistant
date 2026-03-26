@@ -18,13 +18,34 @@ def check_api_keys():
 def run_research_in_thread(research_assistant, topic, progress_container,
                            status_container):
     """Run research in a separate thread"""
-    try:
-        result = research_assistant.run_research(topic)
-        st.session_state.research_result = result
-        st.session_state.research_completed = True
-        st.session_state.research_error = None
-    except Exception as e:
-        st.session_state.research_error = str(e)
+# Run research (FIXED)
+try:
+    time.sleep(3)  # 👈 prevent burst requests
+
+    result = research_crew.kickoff({"topic": topic})
+    st.session_state.research_result = result
+    st.session_state.research_completed = True
+    st.session_state.research_error = None
+
+except Exception as e:
+    error_msg = str(e)
+
+    # 👇 Handle rate limit properly
+    if "rate_limit_exceeded" in error_msg or "RateLimitError" in error_msg:
+        st.warning("⚠️ Rate limit hit. Waiting 25 seconds and retrying...")
+
+        time.sleep(25)  # wait for API reset
+
+        try:
+            result = research_crew.kickoff({"topic": topic})
+            st.session_state.research_result = result
+            st.session_state.research_completed = True
+            st.session_state.research_error = None
+        except Exception as retry_error:
+            st.session_state.research_error = str(retry_error)
+            st.session_state.research_completed = True
+    else:
+        st.session_state.research_error = error_msg
         st.session_state.research_completed = True
 
 
