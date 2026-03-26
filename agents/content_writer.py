@@ -1,7 +1,5 @@
 import os
 from crewai import Agent, LLM
-from crewai_tools import FileWriterTool
-
 
 # LLM configuration
 model = os.getenv("WRITER_AGENT_LLM")
@@ -10,20 +8,23 @@ temperature = float(os.getenv("WRITER_AGENT_TEMPERATURE"))
 llm = LLM(
     model=model,
     temperature=temperature,
-    max_tokens=500   # limit output to prevent Groq rate-limit errors
+    max_tokens=400   # slightly reduced for safety
 )
 
 content_writer_agent = Agent(
     role="Content Writer",
     goal="Create comprehensive and well-structured reports based on research and analysis.",
-    
+
     backstory=(
         "You are a professional content writer with expertise in transforming complex "
         "research and analytical findings into clear, engaging, and well-structured reports. "
-        "You focus on clarity, readability, and accurate citation of sources."
+        "You focus on clarity, readability, and accuracy."
     ),
 
     llm=llm,
-    tools=[FileWriterTool()],
+
+    # ❌ REMOVED FileWriterTool (VERY IMPORTANT)
+    # tools=[FileWriterTool()],
+
     verbose=True,
 )
