@@ -1,3 +1,7 @@
+import crewai.llms.cache as _crewai_cache
+
+_crewai_cache.mark_cache_breakpoint = lambda msg: msg
+
 from crewai import Crew
 
 from agents.research_specialist import research_specialist_agent
