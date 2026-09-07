@@ -9,7 +9,7 @@ temperature = float(os.getenv("ANALYST_AGENT_TEMPERATURE"))
 llm = LLM(
     model=model,
     temperature=temperature,
-    max_tokens=250
+    max_tokens=300
 )
 
 data_analyst_agent = Agent(
