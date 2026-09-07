@@ -11,7 +11,7 @@ temperature = float(os.getenv("RESEARCH_AGENT_TEMPERATURE"))
 llm = LLM(
     model=model,
     temperature=temperature,
-    max_tokens=300   # limit response size
+    max_tokens=400   # limit response size
 )
 
 # Limit search results to reduce token usage
