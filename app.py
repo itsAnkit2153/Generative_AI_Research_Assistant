@@ -2,6 +2,21 @@ import streamlit as st
 import os
 import time
 from dotenv import load_dotenv
+
+# Load Streamlit Cloud secrets before importing CrewAI
+for key in [
+    "RESEARCH_AGENT_LLM",
+    "ANALYST_AGENT_LLM",
+    "WRITER_AGENT_LLM",
+    "RESEARCH_AGENT_TEMPERATURE",
+    "ANALYST_AGENT_TEMPERATURE",
+    "WRITER_AGENT_TEMPERATURE",
+    "GROQ_API_KEY",
+    "SERPER_API_KEY",
+]:
+    if key in st.secrets:
+        os.environ[key] = str(st.secrets[key])
+
 from crew import research_crew
 
 # Load environment variables
