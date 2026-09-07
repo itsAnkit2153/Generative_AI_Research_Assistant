@@ -15,7 +15,7 @@ llm = LLM(
 )
 
 # Limit search results to reduce token usage
-search_tool = SerperDevTool(n_results=2)
+search_tool = SerperDevTool(n_results=1)
 
 research_specialist_agent = Agent(
     role="Research Specialist",
