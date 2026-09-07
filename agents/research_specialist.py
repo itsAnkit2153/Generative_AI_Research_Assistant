@@ -1,4 +1,7 @@
 import os
+import litellm
+
+print("LiteLLM loaded:", litellm.__version__)
 from crewai import Agent, LLM
 from crewai_tools import SerperDevTool
 
